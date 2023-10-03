@@ -25,12 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --logger trx ##--no-build --verbosity normal 
-    
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
-      with:
-        name: Tests
-        path: TestProject1/TestResults/*.trx
-        reporter: dotnet-trx
+      run: dotnet test --no-build --verbosity normal 
